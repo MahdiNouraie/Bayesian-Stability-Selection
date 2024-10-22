@@ -15,6 +15,7 @@ library(hdi)  # For getting riboflavin dataset
 library(robustHD)  # For RLARS
 
 # Session Info
+# Session Info
 #R version 4.3.2 (2023-10-31)
 #Platform: aarch64-apple-darwin20 (64-bit)
 #Running under: macOS 15.0.1
@@ -27,18 +28,18 @@ library(robustHD)  # For RLARS
 #[1] parallel  stats     graphics  grDevices utils     datasets  methods   base     
 
 #other attached packages:
-#[1] glmnet_4.1-8        Matrix_1.6-1.1      robustHD_0.8.1      robustbase_0.99-4-1 perry_0.3.1        
-#[6] ggplot2_3.5.1       hdi_0.1-9           scalreg_1.0.1       lars_1.3           
+#[1] robustHD_0.8.1      robustbase_0.99-4-1 perry_0.3.1         ggplot2_3.5.1       hdi_0.1-9          
+#[6] scalreg_1.0.1       lars_1.3           
 
 #loaded via a namespace (and not attached):
-#[1] gtable_0.3.5      dplyr_1.1.4       compiler_4.3.2    tidyselect_1.2.1  Rcpp_1.0.13      
-#[6] splines_4.3.2     scales_1.3.0      lattice_0.22-6    R6_2.5.1          linprog_0.9-4    
-#[11] generics_0.1.3    shape_1.4.6.1     iterators_1.0.14  MASS_7.3-60       tibble_3.2.1     
-#[16] munsell_0.5.1     pillar_1.9.0      rlang_1.1.4       utf8_1.2.4        cli_3.6.3        
-#[21] withr_3.0.1       magrittr_2.0.3    foreach_1.5.2     grid_4.3.2        rstudioapi_0.16.0
-#[26] lifecycle_1.0.4   DEoptimR_1.1-3    vctrs_0.6.5       lpSolve_5.6.21    glue_1.8.0       
-#[31] codetools_0.2-20  survival_3.7-0    fansi_1.0.6       colorspace_2.1-1  tools_4.3.2      
-#[36] pkgconfig_2.0.3  
+#[1] Matrix_1.6-1.1    glmnet_4.1-8      gtable_0.3.5      dplyr_1.1.4       compiler_4.3.2   
+#[6] tidyselect_1.2.1  Rcpp_1.0.13       splines_4.3.2     scales_1.3.0      lattice_0.22-6   
+#[11] R6_2.5.1          linprog_0.9-4     generics_0.1.3    shape_1.4.6.1     iterators_1.0.14 
+#[16] MASS_7.3-60       tibble_3.2.1      munsell_0.5.1     pillar_1.9.0      rlang_1.1.4      
+#[21] utf8_1.2.4        cli_3.6.3         withr_3.0.1       magrittr_2.0.3    foreach_1.5.2    
+#[26] grid_4.3.2        rstudioapi_0.16.0 lifecycle_1.0.4   DEoptimR_1.1-3    vctrs_0.6.5      
+#[31] lpSolve_5.6.21    glue_1.8.0        codetools_0.2-20  survival_3.7-0    fansi_1.0.6      
+#[36] colorspace_2.1-1  tools_4.3.2       pkgconfig_2.0.3  
 
 #################  Bayesian Stability Selection #################
 # Load the Riboflavin dataset
