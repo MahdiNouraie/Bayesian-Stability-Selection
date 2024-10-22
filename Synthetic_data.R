@@ -99,7 +99,7 @@ for (i in 1:n_datasets) {
   Selection_Frequency[i, ] <- colMeans(S)
 }
 
-# The nuber of times the first 6 predictors were selected
+# The number of times the first 6 predictors were selected
 n_j <- round(colMeans(Selection_Frequency)[1:6] * 100)
 # Using Priors for the first 6 predictors
 # Assuming the answer to the first question is 50% for the first 6 predictors and,
