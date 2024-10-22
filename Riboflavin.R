@@ -12,7 +12,7 @@ if(!require("robustHD")){install.packages("robustHD")}
 
 # Load necessary libraries
 library(hdi)  # For getting riboflavin dataset
-library(glmnet)  # For Elastic Net regression
+library(robustHD)  # For RLARS
 
 # Session Info
 #R version 4.3.2 (2023-10-31)
