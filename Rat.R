@@ -10,7 +10,7 @@ options(warn=-1)
 # Install necessary libraries if not already installed
 if (!requireNamespace("BiocManager", quietly = TRUE)){
   install.packages("BiocManager")}
-library(BiocManager)
+library(BiocManager) # For installing GEOquery
 if(!require("GEOquery")){
   BiocManager::install("GEOquery")
 }
