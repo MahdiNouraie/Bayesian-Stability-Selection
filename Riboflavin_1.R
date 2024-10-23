@@ -1,4 +1,4 @@
-# This code applies Bayesian Stability Selection to the Riboflavin dataset
+# This code applies Bayesian Stability Selection to the Riboflavin data set
 # The RLARS algorithm is used to identify significant predictors
 # For reproducing the results reported in Table 1 of the manuscript,
 # you need to set b = 1000. It takes a few minutes to run.
