@@ -38,7 +38,7 @@ library(glmnet)  # For Elastic Net regression
 p <- 500 # Number of predictors
 n <- 50 # Number of observations
 b <- 100 # Number of subsamples
-n_datasets <- 10 # Number of datasets
+n_datasets <- 100 # Number of datasets
 
 # Initialize matrix for selection frequencies over datasets
 Selection_Frequency <- matrix(0, nrow = n_datasets, ncol = p)
