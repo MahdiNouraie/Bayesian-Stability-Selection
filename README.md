@@ -2,8 +2,7 @@
 
 This repository contains the accompanying code for the paper titled *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*. All scripts are written in R. 
 
-**Disclaimer: For reproducing the results reported in the paper, we can only guarantee consistency if the code is run on posit Cloud. The results may differ if executed on other systems due to variations in system settings**.
-[Posit link: https://posit.cloud/content/9064090](https://posit.cloud/content/9064090)
+**Disclaimer: For reproducing the results reported in the paper, we can only guarantee consistency if the code is run on posit Cloud. The results may differ if executed on other systems due to variations in system settings**.([Posit link](https://posit.cloud/content/9064090))
 
 
 
