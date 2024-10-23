@@ -9,19 +9,19 @@ This repository accompanies the paper *"Bayesian Stability Selection and Inferen
 ### File Descriptions:
 
 **1. `Synthetic_data.R`**  
-This script generates synthetic datasets and applies stability selection using the elastic net. It monitors variable selection frequencies across the generated datasets. Bayesian stability selection is then implemented to infer the inclusion probabilities of variables.
+This script generates synthetic data sets and applies stability selection using the elastic net. It monitors variable selection frequencies across the generated data sets. Bayesian stability selection is then implemented to infer the inclusion probabilities of variables.
 
 **2. `Riboflavin_1.R`**  
-This script applies Bayesian stability selection using RLARS (Randomised Lasso) and non-informative priors on the riboflavin dataset. It reproduces the results presented in Table 1 of the paper.
+This script applies Bayesian stability selection using RLARS and non-informative priors on the riboflavin data set. It reproduces the results presented in Table 1 of the paper.
 
 **3. `Riboflavin_2.R`**  
-In this script, Bayesian stability selection is performed using RLARS with informative priors on the riboflavin dataset. It replicates the results reported in Table 2 of the paper.
+In this script, Bayesian stability selection is performed using RLARS with informative priors on the riboflavin data set. It reproduces the results presented in Table 2 of the paper.
 
 **4. `Rat_1.R`**  
-This script uses Bayesian stability selection with RLARS and non-informative priors on the rat microarray data. The results align with those detailed in Table 3 of the paper.
+This script uses Bayesian stability selection with RLARS and non-informative priors on the rat microarray data. It reproduces the results presented in Table 3 of the paper.
 
 **5. `Rat_2.R`**  
-This script begins by removing outliers from the rat microarray data using an isolation tree algorithm. Bayesian stability selection is then applied with LASSO and non-informative priors to the cleaned data. The results correspond to Table 4 of the paper.
+This script begins by removing outliers from the rat microarray data using an isolation tree algorithm. Bayesian stability selection is then applied with LASSO and non-informative priors to the cleaned data. It reproduces the results presented in Table 4 of the paper.
 
 ---
 
