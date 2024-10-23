@@ -6,7 +6,7 @@ This repository contains the accompanying code for the paper titled *"Bayesian S
 
 
 
-**The sequence of results presented in the paper follows the order: first, the `Synthetic_data.R` file, followed by the `Riboflavin.R` file, and finally with the `Rat.R` file.**.
+**The order of results presented in the paper proceeds as follows: first, the `Synthetic_data.R` file, followed by the `Riboflavin.R` file, and concluding with the `Rat.R` file.**
 
 ### Overview of Files:
 
