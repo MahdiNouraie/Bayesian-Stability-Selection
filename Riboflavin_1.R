@@ -99,12 +99,12 @@ for (i in 1:b) {
 
 # Selection frequency of each predictor
 Selection_Frequency <- colMeans(S)
-# Put names on the selection frequency elements
+# set names on the selection frequency elements
 names(Selection_Frequency) <- colnames(x)
 # Display predictors with selection frequency greater than 0.5
 #Selection_Frequency[Selection_Frequency > 0.5]
 
-# Put names on the selection frequency columns
+# set names on the selection frequency columns
 colnames(S) <- colnames(x)
 
 # determining the prior parameters for the Beta distributions
