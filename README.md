@@ -1,4 +1,4 @@
-# Bayesian Stability Selection Paper Repository
+# Bayesian Stability Selection Repository
 
 This repository contains the accompanying code for the paper titled *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*. All scripts are written in R. 
 
