@@ -1,6 +1,6 @@
-# This code applies Bayesian Stability Selection to the Riboflavin dataset
+# This code applies Bayesian Stability Selection to the Riboflavin data set
 # The RLARS algorithm is used to identify significant predictors
-# For reproducing the results reported in the manuscript,
+# For reproducing the results reported in Table 2 of the manuscript,
 # you need to set b = 1000. It takes a few minutes to run.
 # For faster results, you may set b = 10.
 #################  Install and Load Necessary Libraries #################
@@ -71,7 +71,7 @@ beta_stats <- function(alpha, beta) {
 set.seed(26)
 
 p <- ncol(riboflavin) -1 # Number of predictors
-b <- 10 # Number of subsamples
+b <- 1000 # Number of subsamples
 
 # Initialize selection matrix S
 S <- matrix(data = 0, nrow = b, ncol = p)
