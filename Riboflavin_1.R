@@ -1,6 +1,6 @@
 # This code applies Bayesian Stability Selection to the Riboflavin dataset
 # The RLARS algorithm is used to identify significant predictors
-# For reproducing the results reported in the manuscript,
+# For reproducing the results reported in Table 1 of the manuscript,
 # you need to set b = 1000. It takes a few minutes to run.
 # For faster results, you may set b = 10.
 #################  Install and Load Necessary Libraries #################
@@ -107,25 +107,10 @@ names(Selection_Frequency) <- colnames(x)
 # Put names on the selection frequency columns
 colnames(S) <- colnames(x)
 
-# 41 genes identified by Arashi et al (2021)
-genes <- c('ARGF_at', 'DNAJ_at', 'GAPB_at', 'XHLB_at', 'YACN_at',
-           'YBFI_at', 'LYSC_at', 'PKSA_at', 'PRIA_at', 'YCDH_at',
-           'YCGO_at', 'YCKE_at', 'SPOIIAA_at', 'SPOVAA_at', 'THIK_at',
-           'YCLB_at', 'YCLF_at', 'YDDH_at', 'YDDK_at', 'YEBC_at', 
-           'YFHE_r_at', 'YLXW_at', 'YMFE_at', 'YOAB_at', 'YFII_at',
-           'YFIO_at', 'YFIR_at', 'YPGA_at', 'YQJT_at', 'YQJU_at',
-           'YHDS_r_at', 'YKBA_at', 'YKVJ_at', 'YRVJ_at', 'YTGB_at',
-           'YUID_at', 'YURQ_at', 'YXLD_at', 'YXLE_at', 'YYBG_at', 'YYDA_at')
-# Get the column indices of the 41 genes
-column_index <- which(colnames(x) %in% genes)
 # determining the prior parameters for the Beta distributions
-# We assume that the for the 41 previously identified genes,
-# the answer to the first question is 50% and their perceived importance is 70%
-# For the remaining predictors, we use non-informative priors
+# we use non-informative priors
 prior_alphas <- rep(1, p)
 prior_betas <- rep(1, p)
-prior_alphas[column_index] <- c(rep(700, length(genes)))
-prior_betas[column_index] <- c(rep(300, length(genes)))
 
 # Initialize lists to store posterior parameters for each predictor
 alpha_posterior_list <- list()
@@ -171,4 +156,4 @@ output <- round(output, 3)
 # Order the output by posterior mean in descending order
 output <- output[order(output$`Posterior Mean`, decreasing = TRUE), ]
 # Display the top 10 predictors with the highest posterior mean
-head(output, 10)
+head(output)
