@@ -11,13 +11,13 @@ This repository contains the accompanying code for the paper titled *"Bayesian S
 ### Overview of Files:
 
 **1. `Synthetic_data.R`**  
-This script generates the synthetic datasets used in the paper, applies stability selection via elastic net, and tracks variable selection frequencies across datasets. Bayesian stability selection is employed at the end to infer the inclusion probabilities of variables.
+This script generates the synthetic data sets used in the paper, applies stability selection via elastic net, and tracks variable selection frequencies across data sets. Bayesian stability selection is employed at the end to infer the inclusion probabilities of variables.
 
 **2. `Riboflavin.R`**  
-This script performs stability selection using RLARS on the riboflavin dataset. It incorporates prior information from Arashi et al. (2021) and utilises Bayesian stability selection to infer inclusion probabilities for the genes. The script reproduces the results reported in Table 2 of the paper.
+This script performs stability selection using RLARS on the riboflavin data set. It incorporates prior information from Arashi et al. (2021) and uses Bayesian stability selection to infer inclusion probabilities for the genes. The script reproduces the results reported in Table 2 of the paper.
 
 **3. `Rat.R`**  
-This script begins by removing outlier samples from the rat microarray data before applying stability selection using LASSO on the cleaned dataset. Bayesian stability selection is then used to infer inclusion probabilities for the probes. The script reproduces the results reported in Table 4 of the paper.
+This script begins by removing outlier samples from the rat microarray data before applying stability selection using LASSO on the cleaned data set. Bayesian stability selection is then used to infer inclusion probabilities for the probes. The script reproduces the results reported in Table 4 of the paper.
 
 
 ---
