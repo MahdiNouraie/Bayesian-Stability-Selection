@@ -21,7 +21,7 @@ In this script, Bayesian stability selection is performed using RLARS with infor
 This script uses Bayesian stability selection with RLARS and non-informative priors on the rat microarray data. It reproduces the results presented in Table 3 of the paper.
 
 **5. `Rat_2.R`**  
-This script begins by removing outliers from the rat microarray data using an isolation tree algorithm. Bayesian stability selection is then applied with LASSO and non-informative priors to the cleaned data. It reproduces the results presented in Table 4 of the paper.
+This script begins by removing outliers from the rat microarray data using the isolation tree algorithm. Bayesian stability selection is then applied with LASSO and non-informative priors to the cleaned data. It reproduces the results presented in Table 4 of the paper.
 
 ---
 
