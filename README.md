@@ -1,24 +1,30 @@
 # Bayesian Stability Selection Repository
 
-This repository contains the accompanying code for the paper titled *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*. All scripts are written in R. 
+This repository accompanies the paper *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*, providing the R scripts necessary for reproducing the analysis presented. 
 
-**Disclaimer: Reproducibility of the results presented in the paper can only be ensured if the code is executed on Posit Cloud. Results may vary if run on different systems due to variations in system configurations. In particular, we have observed that certain dependent packages may fail to install on some machines.** ([Posit link](https://posit.cloud/content/9064090))
-
-
-
-### Overview of Files:
-
-**1. `Synthetic_data.R`**  
-This script generates the synthetic data sets used in the paper, applies stability selection via elastic net, and tracks variable selection frequencies across data sets. Bayesian stability selection is employed at the end to infer the inclusion probabilities of variables.
-
-**2. `Riboflavin.R`**  
-This script performs stability selection using RLARS on the riboflavin data set. It incorporates prior information from [Arashi et al. (2021)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245376) and uses Bayesian stability selection to infer inclusion probabilities for the genes. The script reproduces the results reported in Table 2 of the paper.
-
-**3. `Rat.R`**  
-This script begins by removing outlier samples from the rat microarray data before applying stability selection using LASSO on the cleaned data set. Bayesian stability selection is then used to infer inclusion probabilities for the probes. The script reproduces the results reported in Table 4 of the paper.
-
+**Note:** Reproducibility of results is assured when the code is executed on Posit Cloud. System differences may result in variation, particularly with dependent package installations. We have observed that certain packages may not install on all systems. ([Posit Project link](https://posit.cloud/content/9064090)).
 
 ---
+
+### File Descriptions:
+
+**1. `Synthetic_data.R`**  
+This script generates synthetic datasets and applies stability selection using the elastic net. It monitors variable selection frequencies across the generated datasets. Bayesian stability selection is then implemented to infer the inclusion probabilities of variables.
+
+**2. `Riboflavin_1.R`**  
+This script applies Bayesian stability selection using RLARS (Randomised Lasso) and non-informative priors on the riboflavin dataset. It reproduces the results presented in Table 1 of the paper.
+
+**3. `Riboflavin_2.R`**  
+In this script, Bayesian stability selection is performed using RLARS with informative priors on the riboflavin dataset. It replicates the results reported in Table 2 of the paper.
+
+**4. `Rat_1.R`**  
+This script uses Bayesian stability selection with RLARS and non-informative priors on the rat microarray data. The results align with those detailed in Table 3 of the paper.
+
+**5. `Rat_2.R`**  
+This script begins by removing outliers from the rat microarray data using an isolation tree algorithm. Bayesian stability selection is then applied with LASSO and non-informative priors to the cleaned data. The results correspond to Table 4 of the paper.
+
+---
+
 
 
 
