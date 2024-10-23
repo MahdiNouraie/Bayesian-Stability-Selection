@@ -1,7 +1,7 @@
 # This code applies Bayesian Stability Selection to the rat microarray dataset
 # The isolation forest algorithm is used to identify outliers
 # The LASSO algorithm is used to identify significant predictors
-# For getting the results similar to those reported in the manuscript,
+# For reproducing the results reported in the manuscript,
 # you need to set b = 1000. It takes a few minutes to run.
 # For faster results, you may set b = 10.
 #################  Install and Load Necessary Libraries #################
