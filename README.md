@@ -2,7 +2,7 @@
 
 This repository contains the accompanying code for the paper titled *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*. All scripts are written in R. 
 
-**We recomment to start by exploring the `Synthetic_data.R` file**.
+**The sequence of results presented in the paper follows the order: first, the `Synthetic_data.R` file, followed by the `Riboflavin.R` file, and finally with the `Rat.R` file.**.
 
 ### Overview of Files:
 
