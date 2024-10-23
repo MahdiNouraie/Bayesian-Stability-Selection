@@ -2,7 +2,9 @@
 
 This repository contains the accompanying code for the paper titled *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*. All scripts are written in R. 
 
-**<p style="color:red;"><strong>Disclaimer:</strong> For reproducing the results reported in the paper, we can only guarantee consistency if the code is run on Posit (formerly RStudio). The results may differ if executed on other systems due to variations in system settings</p>**.
+**Disclaimer: For reproducing the results reported in the paper, we can only guarantee consistency if the code is run on posit Cloud. The results may differ if executed on other systems due to variations in system settings**.
+[Posit link: https://posit.cloud/content/9064090](https://posit.cloud/content/9064090)
+
 
 
 **The sequence of results presented in the paper follows the order: first, the `Synthetic_data.R` file, followed by the `Riboflavin.R` file, and finally with the `Rat.R` file.**.
