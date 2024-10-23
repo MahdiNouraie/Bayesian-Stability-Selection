@@ -71,7 +71,7 @@ beta_stats <- function(alpha, beta) {
 set.seed(26)
 
 p <- ncol(riboflavin) -1 # Number of predictors
-b <- 10 # Number of subsamples
+b <- 1000 # Number of subsamples
 
 # Initialize selection matrix S
 S <- matrix(data = 0, nrow = b, ncol = p)
