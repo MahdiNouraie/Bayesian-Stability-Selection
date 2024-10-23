@@ -1,7 +1,7 @@
-# This code applies Bayesian Stability Selection to the rat microarray dataset
+# This code applies Bayesian Stability Selection to the rat microarray data set
 # The isolation forest algorithm is used to identify outliers
 # The LASSO algorithm is used to identify significant predictors
-# For reproducing the results reported in the manuscript,
+# For reproducing the results reported in Table 4 of the manuscript,
 # you need to set b = 1000. It takes a few minutes to run.
 # For faster results, you may set b = 10.
 #################  Install and Load Necessary Libraries #################
@@ -122,7 +122,7 @@ beta_stats <- function(alpha, beta) {
 }
 
 p <- ncol(data) -1 # Number of predictors
-b <- 10 # Number of subsamples
+b <- 1000 # Number of subsamples
 
 x <- data[,-1]; y <- data[,1] # Separate predictors and response
 x <- scale(x) # Standardise the predictors
