@@ -1,5 +1,5 @@
-# This code generates synthetic data and 
-#performs Bayesian Stability Selection using Elastic Net regression.
+# This code generates synthetic data sets and 
+# performs Bayesian Stability Selection using Elastic Net regression.
 # n_dataset denotes the number of datasets generated.
 # For reproducing the results reported in the manuscript,
 # you need to set n_datasets = 100. It takes a few minutes to run.
