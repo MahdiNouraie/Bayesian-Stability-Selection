@@ -11,7 +11,7 @@ This repository contains the accompanying code for the paper titled *"Bayesian S
 ### Overview of Files:
 
 **1. `Synthetic_data.R`**  
-This script generates synthetic data sets, applies stability selection using LASSO, and tracks the selection frequencies of variables across data sets. At the end, the Bayesian method is used to infer inclusion probabilities for variables.
+This script generates synthetic the synthetic data sets in the paper, applies stability selection using elastic net, and tracks the selection frequencies of variables across data sets. At the end, the Bayesian stability selection is used to infer inclusion probabilities for variables.
 
 **2. `Riboflavin.R`**  
 This script applies stability selection using RLARS on the riboflavin data set. It incorporates prior information from a related study and employs the Bayesian tool to estimate inclusion probabilities for the variables.
