@@ -155,5 +155,5 @@ output$`Upper Bound` <- U
 output <- round(output, 3)
 # Order the output by posterior mean in descending order
 output <- output[order(output$`Posterior Mean`, decreasing = TRUE), ]
-# Display the top 10 predictors with the highest posterior mean
+# Display the top 5 predictors with the highest posterior mean
 head(output)
