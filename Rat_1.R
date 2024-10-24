@@ -13,12 +13,11 @@ library(BiocManager) # For installing GEOquery
 if(!require("GEOquery")){
   BiocManager::install("GEOquery")
 }
-if(!require("glmnet")){install.packages("glmnet")}
-if(!require("isotree")){install.packages("isotree")}
+if(!require("robustHD")){install.packages("robustHD")}
 # Load necessary libraries
 library(GEOquery) # For accessing Gene Expression Omnibus (GEO) data
-library(glmnet)  # For LASSO
-library(isotree)  # For Isolation Forest
+library(robustHD)  # For RLARS
+
 
 
 # Session Info
