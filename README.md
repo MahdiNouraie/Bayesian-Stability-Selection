@@ -1,4 +1,4 @@
-# Bayesian Stability Selection Repository
+# Bayesian Stability Selection
 
 This repository accompanies the paper *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*, providing the R scripts necessary for reproducing the analysis presented. [Preprint Version](https://arxiv.org/pdf/2410.21914)
 
