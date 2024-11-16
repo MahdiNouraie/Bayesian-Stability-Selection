@@ -1,6 +1,6 @@
 # Bayesian Stability Selection Repository
 
-This repository accompanies the paper *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*, providing the R scripts necessary for reproducing the analysis presented. [preprint version](https://arxiv.org/pdf/2410.21914)
+This repository accompanies the paper *"Bayesian Stability Selection and Inference on Inclusion Probabilities"*, providing the R scripts necessary for reproducing the analysis presented. [Preprint Version](https://arxiv.org/pdf/2410.21914)
 
 **Note:** Reproducibility of results is assured when the code is executed on Posit Cloud. System differences may result in variation, particularly with dependent package installations. We have observed that certain packages may not install on all systems. [Project on Posit Cloud](https://posit.cloud/content/9074125)
 
