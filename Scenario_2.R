@@ -21,36 +21,38 @@ library(ggplot2)  # For plotting
 library(latex2exp) # For LaTeX expressions in plots
 #sessionInfo()
 #R version 4.4.2 (2024-10-31)
-#Platform: aarch64-apple-darwin20
-#Running under: macOS Sequoia 15.3.1
+#Platform: x86_64-pc-linux-gnu
+#Running under: Ubuntu 20.04.6 LTS
 
 #Matrix products: default
-#BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
-#LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+#BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+#LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3;  LAPACK version 3.9.0
 
 #locale:
-#  [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+#  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
+#[4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   
+#[7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
+#[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
 
-#time zone: Australia/Sydney
-#tzcode source: internal
+#time zone: UTC
+#tzcode source: system (glibc)
 
 #attached base packages:
 #  [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 #other attached packages:
-#  [1] latex2exp_0.9.6 ggplot2_3.5.1   reshape2_1.4.4  glmnet_4.1-8    Matrix_1.7-1   
+#  [1] latex2exp_0.9.6 reshape2_1.4.4  ggplot2_3.5.1   glmnet_4.1-8    Matrix_1.7-1   
 #[6] MASS_7.3-64    
 
 #loaded via a namespace (and not attached):
-#  [1] vctrs_0.6.5       cli_3.6.3         rlang_1.1.4       stringi_1.8.4    
-#[5] generics_0.1.3    glue_1.8.0        colorspace_2.1-1  plyr_1.8.9       
-#[9] scales_1.3.0      grid_4.4.2        tibble_3.2.1      munsell_0.5.1    
-#[13] foreach_1.5.2     lifecycle_1.0.4   stringr_1.5.1     compiler_4.4.2   
-#[17] dplyr_1.1.4       codetools_0.2-20  pkgconfig_2.0.3   Rcpp_1.0.14      
-#[21] rstudioapi_0.17.1 lattice_0.22-6    R6_2.5.1          tidyselect_1.2.1 
-#[25] pillar_1.10.0     splines_4.4.2     shape_1.4.6.1     magrittr_2.0.3   
-#[29] withr_3.0.2       tools_4.4.2       gtable_0.3.6      iterators_1.0.14 
-#[33] survival_3.8-3 
+#  [1] vctrs_0.6.5      cli_3.6.4        rlang_1.1.5      stringi_1.8.4   
+#[5] generics_0.1.3   glue_1.8.0       colorspace_2.1-1 plyr_1.8.9      
+#[9] scales_1.3.0     grid_4.4.2       munsell_0.5.1    tibble_3.2.1    
+#[13] foreach_1.5.2    lifecycle_1.0.4  stringr_1.5.1    compiler_4.4.2  
+#[17] dplyr_1.1.4      codetools_0.2-20 Rcpp_1.0.14      pkgconfig_2.0.3 
+#[21] lattice_0.22-6   R6_2.6.1         tidyselect_1.2.1 pillar_1.10.1   
+#[25] splines_4.4.2    shape_1.4.6.1    magrittr_2.0.3   withr_3.0.2     
+#[29] tools_4.4.2      gtable_0.3.6     iterators_1.0.14 survival_3.7-0  
 
 ################# Set Parameters #################
 p <- 500 # Number of predictors
@@ -188,15 +190,11 @@ ggplot(new_mat_melted2, aes(x = Var2, y = Var1, fill = as.factor(value))) +
   scale_x_continuous(breaks = seq(0, 0.5, 0.1)) +
   scale_y_continuous(breaks = seq(0, 1, 0.1)) +
   geom_tile() +
-  scale_fill_manual(values = c("lawngreen", "violetred")) +
-  guides(fill = guide_legend(reverse = TRUE)) +
+  scale_fill_manual(values = c("lawngreen", "violetred", "mediumvioletred"))+
+guides(fill = guide_legend(reverse = TRUE)) +
   labs(x = TeX("$\\tilde{zeta}_{j}$"), y = TeX("$\\tilde{xi}_{j}$"), fill = "Count",
        title = TeX("Heatmap of Incorrect Selections vs $\\tilde{zeta}_{j}$ and $\\tilde{xi}_{j}$")) +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, size = 18),  
         axis.title = element_text(size = 20),              
         axis.text = element_text(size = 12))
-
-
-
-
