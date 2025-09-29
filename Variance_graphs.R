@@ -55,7 +55,7 @@ library(plotly)
 #[34] tools_4.4.2       pkgconfig_2.0.3   htmltools_0.5.8.1
 
 # Define the function to return both variance values
-# V1 is variance of posterior selection probability for non-informative prior
+# V1 is variance of posterior selection probability for uniform prior
 # V2 is variance of posterior selection probability for informative prior
 variance_values <- function(B, n, a) {
   V1 <- ((1 + n) * (1 + B - n)) / ((2 + B)^2 * (3 + B))
@@ -68,7 +68,7 @@ variance_values <- function(B, n, a) {
 B <- 100
 n <- 30
 
-# Create a sequence of a values from 0 to 1000
+# Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
 # Compute V1 and V2 for each a value
@@ -106,7 +106,7 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
 B <- 100
 n <- 50
 
-# Create a sequence of a values from 0 to 1000
+# Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
 # Compute V1 and V2 for each a value
@@ -144,7 +144,7 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
 B <- 100
 n <- 70
 
-# Create a sequence of a values from 0 to 1000
+# Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
 # Compute V1 and V2 for each a value
@@ -182,7 +182,7 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
 B <- 100
 n <- 10
 
-# Create a sequence of a values from 0 to 1000
+# Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
 # Compute V1 and V2 for each a value
@@ -221,7 +221,7 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
 B <- 100
 n <- 90
 
-# Create a sequence of a values from 0 to 1000
+# Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
 # Compute V1 and V2 for each a value
