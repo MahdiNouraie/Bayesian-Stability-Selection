@@ -77,7 +77,7 @@ variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
-  Non_Informative = sapply(variance_results, function(x) x$V1),
+  Uniform = sapply(variance_results, function(x) x$V1),
   Informative = sapply(variance_results, function(x) x$V2)
 )
 # Convert data to long format for ggplot
@@ -115,7 +115,7 @@ variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
-  Non_Informative = sapply(variance_results, function(x) x$V1),
+  Uniform = sapply(variance_results, function(x) x$V1),
   Informative = sapply(variance_results, function(x) x$V2)
 )
 # Convert data to long format for ggplot
@@ -153,7 +153,7 @@ variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
-  Non_Informative = sapply(variance_results, function(x) x$V1),
+  Uniform = sapply(variance_results, function(x) x$V1),
   Informative = sapply(variance_results, function(x) x$V2)
 )
 # Convert data to long format for ggplot
@@ -191,7 +191,7 @@ variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
-  Non_Informative = sapply(variance_results, function(x) x$V1),
+  Uniform = sapply(variance_results, function(x) x$V1),
   Informative = sapply(variance_results, function(x) x$V2)
 )
 # Convert data to long format for ggplot
@@ -230,7 +230,7 @@ variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
-  Non_Informative = sapply(variance_results, function(x) x$V1),
+  Uniform = sapply(variance_results, function(x) x$V1),
   Informative = sapply(variance_results, function(x) x$V2)
 )
 # Convert data to long format for ggplot
@@ -302,7 +302,6 @@ plot1
 # Figure 3b
 plot2
 rm(list=ls()); gc() # Clean up
-
 
 
 
