@@ -271,7 +271,7 @@ grid <- expand.grid(a = a_values, n = n_values)
 # Calculate V1 and V2 for each combination of a and n
 variance_results <- mapply(variance_values, grid$a, grid$n, MoreArgs = list(B = B), SIMPLIFY = FALSE)
 
-# Extract V1, V2
+# Extract V1 and V2
 grid$V1 <- sapply(variance_results, function(x) x$V1)
 grid$V2 <- sapply(variance_results, function(x) x$V2)
 
