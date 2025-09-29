@@ -261,7 +261,7 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
 # Fix B
 B <- 100
 
-# Create a grid of a and n values from 200 to 800
+# Create a grid of a and n values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 n_values <- seq(0, 100, by = 1)
 
@@ -280,7 +280,7 @@ matrix_V1 <- matrix(grid$V1, nrow = length(a_values), ncol = length(n_values), b
 matrix_V2 <- matrix(grid$V2, nrow = length(a_values), ncol = length(n_values), byrow = TRUE)
 
 # Define axis labels
-x_label <- list(title = "n")  # Now n is on the x-axis
+x_label <- list(title = "n")  # n is on the x-axis
 y_label <- list(title = "alpha")  # alpha is on the y-axis
 
 # Create 3D surface plots
