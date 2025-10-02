@@ -57,10 +57,12 @@ library(plotly)
 # Define the function to return both variance values
 # V1 is variance of posterior selection probability for uniform prior
 # V2 is variance of posterior selection probability for informative prior
+# V3 is variance of posterior selection probability for Jeffreys prior
 variance_values <- function(B, n, a) {
   V1 <- ((1 + n) * (1 + B - n)) / ((2 + B)^2 * (3 + B))
   V2 <- ((a + n) * (2*B - a - n)) / (4 * B^2 * (2 * B + 1))
-  return(list(V1 = V1, V2 = V2))
+  V3 <- ((0.5 + n) * (0.5 + B - n)) / ((1 + B)^2 * (2 + B))
+  return(list(V1 = V1, V2 = V2, V3 = V3))
 }
 
 # Figure 1a
@@ -71,21 +73,22 @@ n <- 30
 # Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
-# Compute V1 and V2 for each a value
+# Compute V1, V2, and V3 for each a value
 variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
   Uniform = sapply(variance_results, function(x) x$V1),
-  Informative = sapply(variance_results, function(x) x$V2)
+  Informative = sapply(variance_results, function(x) x$V2),
+  Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
 df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
 
 # Plot density curves with thicker lines
 ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
-  geom_density(stat = "identity", size = 1.2) +  # Increase line thickness
+  geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
@@ -109,21 +112,22 @@ n <- 50
 # Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
-# Compute V1 and V2 for each a value
+# Compute V1, V2, and V3 for each a value
 variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
   Uniform = sapply(variance_results, function(x) x$V1),
-  Informative = sapply(variance_results, function(x) x$V2)
+  Informative = sapply(variance_results, function(x) x$V2),
+  Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
 df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
 
 # Plot density curves with thicker lines
 ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
-  geom_density(stat = "identity", size = 1.2) +  # Increase line thickness
+  geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
@@ -147,21 +151,22 @@ n <- 70
 # Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
-# Compute V1 and V2 for each a value
+# Compute V1, V2, and V3 for each a value
 variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
   Uniform = sapply(variance_results, function(x) x$V1),
-  Informative = sapply(variance_results, function(x) x$V2)
+  Informative = sapply(variance_results, function(x) x$V2),
+  Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
 df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
 
 # Plot density curves with thicker lines
 ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
-  geom_density(stat = "identity", size = 1.2) +  # Increase line thickness
+  geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
@@ -185,21 +190,22 @@ n <- 10
 # Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
-# Compute V1 and V2 for each a value
+# Compute V1, V2, and V3 for each a value
 variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
   Uniform = sapply(variance_results, function(x) x$V1),
-  Informative = sapply(variance_results, function(x) x$V2)
+  Informative = sapply(variance_results, function(x) x$V2),
+  Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
 df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
 
 # Plot density curves with thicker lines
 ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
-  geom_density(stat = "identity", size = 1.2) +  # Increase line thickness
+  geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
@@ -224,21 +230,22 @@ n <- 90
 # Create a sequence of a values from 0 to 100
 a_values <- seq(0, 100, by = 1)
 
-# Compute V1 and V2 for each a value
+# Compute V1, V2, and V3 for each a value
 variance_results <- lapply(a_values, function(a) variance_values(B, n, a))
 
 # Convert the list to a data frame
 df <- data.frame(
   a = a_values,
   Uniform = sapply(variance_results, function(x) x$V1),
-  Informative = sapply(variance_results, function(x) x$V2)
+  Informative = sapply(variance_results, function(x) x$V2),
+  Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
 df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
 
 # Plot density curves with thicker lines
 ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
-  geom_density(stat = "identity", size = 1.2) +  # Increase line thickness
+  geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
@@ -255,8 +262,8 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
   )
 
 
-# Figure 3a , 3b
-# Define the function to return both V1 and V2
+# Figure 3a , 3b, and 3c
+# Define the function to return both V1, V2, and V3
 
 # Fix B
 B <- 100
@@ -268,16 +275,18 @@ n_values <- seq(0, 100, by = 1)
 # Expand the grid
 grid <- expand.grid(a = a_values, n = n_values)
 
-# Calculate V1 and V2 for each combination of a and n
+# Calculate V1, V2, and V3 for each combination of a and n
 variance_results <- mapply(variance_values, grid$a, grid$n, MoreArgs = list(B = B), SIMPLIFY = FALSE)
 
-# Extract V1 and V2
+# Extract V1, V2, and V3 into the grid data frame
 grid$V1 <- sapply(variance_results, function(x) x$V1)
 grid$V2 <- sapply(variance_results, function(x) x$V2)
+grid$V3 <- sapply(variance_results, function(x) x$V3)
 
 # Reshape data into matrices for surface plotting
 matrix_V1 <- matrix(grid$V1, nrow = length(a_values), ncol = length(n_values), byrow = TRUE)
 matrix_V2 <- matrix(grid$V2, nrow = length(a_values), ncol = length(n_values), byrow = TRUE)
+matrix_V3 <- matrix(grid$V3, nrow = length(a_values), ncol = length(n_values), byrow = TRUE)
 
 # Define axis labels
 x_label <- list(title = "n")  # n is on the x-axis
@@ -296,12 +305,19 @@ plot2 <- plot_ly(x = n_values, y = a_values, z = matrix_V2, type = 'surface') %>
                       yaxis = y_label,
                       zaxis = list(title = "Variance")))
 
+plot3 <- plot_ly(x = n_values, y = a_values, z = matrix_V3, type = 'surface') %>%
+  layout(title = "Surface Plot of V3",
+         scene = list(xaxis = x_label,
+                      yaxis = y_label,
+                      zaxis = list(title = "Variance")))
+
 # Display plots
 # Figure 3a
 plot1
 # Figure 3b
 plot2
+# Figure 3c
+plot3
 rm(list=ls()); gc() # Clean up
-
 
 
