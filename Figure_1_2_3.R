@@ -262,7 +262,7 @@ ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
   )
 
 
-# Figure 3a , 3b, and 3c
+# Figure 3a and 3b
 # Define the function to return both V1, V2, and V3
 
 # Fix B
