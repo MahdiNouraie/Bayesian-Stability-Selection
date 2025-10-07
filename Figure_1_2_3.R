@@ -59,9 +59,9 @@ library(plotly)
 # V2 is variance of posterior selection probability for informative prior
 # V3 is variance of posterior selection probability for Jeffreys prior
 variance_values <- function(B, n, a) {
-  V1 <- ((1 + n) * (1 + B - n)) / ((2 + B)^2 * (3 + B))
-  V2 <- ((a + n) * (2*B - a - n)) / (4 * B^2 * (2 * B + 1))
-  V3 <- ((0.5 + n) * (0.5 + B - n)) / ((1 + B)^2 * (2 + B))
+  V1 <- ((1 + n) * (1 + B - n)) / ((2 + B)^2 * (3 + B)) # Uniform prior
+  V2 <- ((a + n) * (2*B - a - n)) / (4 * B^2 * (2 * B + 1)) # Informative prior
+  V3 <- ((0.5 + n) * (0.5 + B - n)) / ((1 + B)^2 * (2 + B)) # Jeffreys prior
   return(list(V1 = V1, V2 = V2, V3 = V3))
 }
 
@@ -316,7 +316,7 @@ plot3 <- plot_ly(x = n_values, y = a_values, z = matrix_V3, type = 'surface') %>
 plot1
 # Figure 3b
 plot2
-# Figure 3c
+# Jeffreys prior
 plot3
 rm(list=ls()); gc() # Clean up
 
