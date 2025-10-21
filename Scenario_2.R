@@ -68,7 +68,7 @@ rho <- 0.9
 Sigma <- rho^abs(row(diag(p)) - col(diag(p)))
 
 # Define the coefficient vector
-beta <- c(0.5, 0.4, 0.3, 0.2, rep(0, p - 4))  
+beta <- c(0.35, 0.3, 0.25, 0.2, rep(0, p - 4))  
 
 ################# Data Generation and Bayesian Stability Selection #################
 # Generate synthetic datasets and loop through to calculate selection frequencies
@@ -90,6 +90,8 @@ for (i in 1:n_datasets) {
   
   # Get the optimal lambda value
   lambda <- cv_elastic$lambda.1se
+  # adjust lambda for sub-sampling
+  lambda <- lambda * sqrt(0.5)
   
   # Initialize matrix S for stability selection for current dataset
   S <- matrix(data = 0, nrow = b, ncol = p)  
@@ -125,8 +127,8 @@ beta_j <- rep(30, 4)
 
 # The average selection frequency of the first 4 predictors over all datasets
 cat("Selection Frequency: ", round(colMeans(Selection_Frequency)[1:4], 3),'\n')
-# Posterior Inclusion Probability
-cat("Inclusion Probability: ", round((n_j + alpha_j) / (b + alpha_j + beta_j), 3))
+# Posterior selection probability
+cat("Selection Probability: ", round((n_j + alpha_j) / (b + alpha_j + beta_j), 3))
 
 
 ################# Plot (Figure 5) #################
@@ -191,10 +193,16 @@ ggplot(new_mat_melted2, aes(x = Var2, y = Var1, fill = as.factor(value))) +
   scale_y_continuous(breaks = seq(0, 1, 0.1)) +
   geom_tile() +
   scale_fill_manual(values = c("lawngreen", "violetred", "mediumvioletred"))+
-guides(fill = guide_legend(reverse = TRUE)) +
+  guides(fill = guide_legend(reverse = TRUE)) +
   labs(x = TeX("$\\tilde{zeta}_{j}$"), y = TeX("$\\tilde{xi}_{j}$"), fill = "Count",
        title = TeX("Heatmap of Incorrect Selections vs $\\tilde{zeta}_{j}$ and $\\tilde{xi}_{j}$")) +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5, size = 18),  
         axis.title = element_text(size = 20),              
         axis.text = element_text(size = 12))
+
+################# Sparse prior #################
+alpha_j2 <- rep(1, 4)
+beta_j2 <- rep(p, 4)
+# Posterior selection probability with sparse priors
+cat("Selection Probability with sparse priors: ", round((n_j + alpha_j2) / (b + alpha_j2 + beta_j2), 3))
