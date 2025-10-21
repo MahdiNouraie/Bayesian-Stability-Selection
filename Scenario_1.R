@@ -209,5 +209,5 @@ ggplot(new_mat_melted2, aes(x = Var2, y = Var1, fill = as.factor(value))) +
 ################# Sparse prior #################
 alpha_j2 <- rep(1, 6)
 beta_j2 <- rep(p, 6)
-# Posterior selection Probability with sparse priors
+# Posterior selection probability with sparse priors
 cat("Selection Probability with sparse priors: ", round((n_j + alpha_j2) / (b + alpha_j2 + beta_j2), 3))
