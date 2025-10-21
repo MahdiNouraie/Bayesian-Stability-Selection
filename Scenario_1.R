@@ -72,7 +72,7 @@ Sigma[3, 5] <- Sigma[5, 3] <- 0.8
 Sigma[4, 5] <- Sigma[5, 4] <- 0.8
 
 # Define the coefficient vector
-beta <- c(rep(0.9, 2), rep(0.7, 3), 1.5, rep(0, p - 6))  
+beta <- c(rep(0.8, 2), rep(0.6, 3), 1.3, rep(0, p - 6))  
 
 ################# Data Generation and Bayesian Stability Selection #################
 # Generate synthetic datasets and loop through to calculate selection frequencies
@@ -94,7 +94,8 @@ for (i in 1:n_datasets) {
   
   # Get the optimal lambda value
   lambda <- cv_elastic$lambda.1se
-  
+  # Adjust lambda for sub-sampling
+  lambda <- lambda * sqrt(0.5)
   # Initialize matrix S for stability selection for current dataset
   S <- matrix(data = 0, nrow = b, ncol = p)  
   for (j in 1:b) {  # Number of subsamples
@@ -129,9 +130,8 @@ beta_j <- rep(30, 6)
 
 # The average selection frequency of the first 6 predictors over all datasets
 cat("Selection Frequency: ", round(colMeans(Selection_Frequency)[1:6], 3),'\n')
-# Posterior Inclusion Probability
-cat("Inclusion Probability: ", round((n_j + alpha_j) / (b + alpha_j + beta_j), 3))
-
+# Posterior selection Probability
+cat("Selection Probability: ", round((n_j + alpha_j) / (b + alpha_j + beta_j), 3))
 
 
 ################# Plot Figure 4 #################
@@ -204,3 +204,10 @@ ggplot(new_mat_melted2, aes(x = Var2, y = Var1, fill = as.factor(value))) +
   theme(plot.title = element_text(hjust = 0.5, size = 18),  
         axis.title = element_text(size = 20),              
         axis.text = element_text(size = 12))
+
+
+################# Sparse prior #################
+alpha_j2 <- rep(1, 6)
+beta_j2 <- rep(p, 6)
+# Posterior selection Probability with sparse priors
+cat("Selection Probability with sparse priors: ", round((n_j + alpha_j2) / (b + alpha_j2 + beta_j2), 3))
