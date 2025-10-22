@@ -130,6 +130,8 @@ x <- scale(x) # Standardise the predictors
 cv_lasso <- cv.glmnet(as.matrix(x), y, nfolds = 10, alpha = 1)
 # Get the optimal lambda value
 lambda <- cv_lasso$lambda.1se
+# adjust lambda for sub-sampling
+lambda <- lambda * sqrt(0.5)
 
 # Initialize selection matrix S
 S <- matrix(data = 0, nrow = b, ncol = p)
@@ -208,6 +210,5 @@ output <- round(output, 3)
 # Order the output by posterior mean in descending order
 output <- output[order(output$`Posterior Mean`, decreasing = TRUE), ]
 # Display the top 5 predictors with the highest posterior mean
-head(output, 5)
-
+head(output, 10)
 
