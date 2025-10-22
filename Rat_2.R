@@ -212,3 +212,16 @@ output <- output[order(output$`Posterior Mean`, decreasing = TRUE), ]
 # Display the top 5 predictors with the highest posterior mean
 head(output, 10)
 
+
+##### Lasso Confidence Intervals #####
+x <- data[,-1]
+y <- data[,1]
+x <- scale(x) # Standardize the predictors
+library(hdi)
+fit <- lasso.proj(x, y)
+CI <- confint(fit)
+CI[c("X1390539_at", "X1389457_at", "X1376747_at",
+     "X1374106_at", "X1393727_at", "X1393051_at"),]
+
+
+
