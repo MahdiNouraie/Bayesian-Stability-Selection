@@ -8,7 +8,7 @@ This repository accompanies the paper *"Bayesian Stability Selection and Inferen
 
 ### File Descriptions:
 
-**1. `Figures1_2_3.R`**  
+**1. `Figure1_2_3.R`**  
 This script genrates plots presented in the methodology section of the paper.
 
 **2. `Scenario_1.R`**  
