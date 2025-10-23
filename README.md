@@ -8,7 +8,7 @@ This repository accompanies the paper *"Bayesian Stability Selection and Inferen
 
 ### File Descriptions:
 
-**1. `Variance_graphs.R`**  
+**1. `Figures1_2_3.R`**  
 This script genrates plots presented in the methodology section of the paper.
 
 **2. `Scenario_1.R`**  
@@ -18,16 +18,16 @@ This script genrates results and plots presented for the first synthetic scenari
 This script genrates results and plots presented for the second synthetic scenario presented in the paper.
 
 **4. `Riboflavin_1.R`**  
-This script applies Bayesian stability selection using RLARS and non-informative priors on the riboflavin data set. It reproduces the results presented in Table 1 of the paper.
+This script applies Bayesian stability selection using RLARS and uniform priors on the riboflavin data set. It reproduces the results presented in Table 1 of the paper.
 
 **5. `Riboflavin_2.R`**  
 In this script, Bayesian stability selection is performed using RLARS with informative priors on the riboflavin data set. It reproduces the results presented in Table 2 of the paper.
 
 **6. `Rat_1.R`**  
-This script uses Bayesian stability selection with RLARS and non-informative priors on the rat microarray data. It reproduces the results presented in Table 3 of the paper.
+This script uses Bayesian stability selection with RLARS and uniform priors on the rat microarray data. It reproduces the results presented in Table 3 of the paper.
 
 **7. `Rat_2.R`**  
-This script begins by removing outliers from the rat microarray data using the isolation tree algorithm. Bayesian stability selection is then applied with LASSO and non-informative priors to the cleaned data. It reproduces the results presented in Table 4 of the paper.
+This script begins by removing outliers from the rat microarray data using the isolation tree algorithm. Bayesian stability selection is then applied with LASSO and uniform priors to the cleaned data. It reproduces the results presented in Table 4 of the paper.
 
 ---
 
