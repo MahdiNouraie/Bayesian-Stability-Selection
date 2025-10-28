@@ -220,8 +220,10 @@ x <- scale(x) # Standardize the predictors
 library(hdi)
 fit <- lasso.proj(x, y)
 CI <- confint(fit)
-CI[c("X1390539_at", "X1389457_at", "X1376747_at",
+CI_table <- CI[c("X1390539_at", "X1389457_at", "X1376747_at",
      "X1374106_at", "X1393727_at", "X1393051_at"),]
+CI_table <- round(CI_table, 3)
+CI_table
 
 
 
