@@ -84,16 +84,16 @@ df <- data.frame(
   Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
-df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
+df_long <- melt(df, id.vars = "a", variable.name = "Prior", value.name = "Value")
 
 # Plot density curves with thicker lines
-ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
+ggplot(df_long, aes(x = a, y = Value, colour = Prior)) +
   geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
     y = "Variance",
-    colour = "Mode"
+    colour = "Prior"
   ) +
   theme_bw() +
   theme(
@@ -123,16 +123,16 @@ df <- data.frame(
   Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
-df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
+df_long <- melt(df, id.vars = "a", variable.name = "Prior", value.name = "Value")
 
 # Plot density curves with thicker lines
-ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
+ggplot(df_long, aes(x = a, y = Value, colour = Prior)) +
   geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
     y = "Variance",
-    colour = "Mode"
+    colour = "Prior"
   ) +
   theme_bw() +
   theme(
@@ -162,16 +162,16 @@ df <- data.frame(
   Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
-df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
+df_long <- melt(df, id.vars = "a", variable.name = "Prior", value.name = "Value")
 
 # Plot density curves with thicker lines
-ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
+ggplot(df_long, aes(x = a, y = Value, colour = Prior)) +
   geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
     y = "Variance",
-    colour = "Mode"
+    colour = "Prior"
   ) +
   theme_bw() +
   theme(
@@ -201,16 +201,16 @@ df <- data.frame(
   Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
-df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
+df_long <- melt(df, id.vars = "a", variable.name = "Prior", value.name = "Value")
 
 # Plot density curves with thicker lines
-ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
+ggplot(df_long, aes(x = a, y = Value, colour = Prior)) +
   geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
     y = "Variance",
-    colour = "Mode"
+    colour = "Prior"
   ) +
   theme_bw() +
   theme(
@@ -241,16 +241,16 @@ df <- data.frame(
   Jeffreys = sapply(variance_results, function(x) x$V3)
 )
 # Convert data to long format for ggplot
-df_long <- melt(df, id.vars = "a", variable.name = "Mode", value.name = "Value")
+df_long <- melt(df, id.vars = "a", variable.name = "Prior", value.name = "Value")
 
 # Plot density curves with thicker lines
-ggplot(df_long, aes(x = a, y = Value, colour = Mode)) +
+ggplot(df_long, aes(x = a, y = Value, colour = Prior)) +
   geom_density(stat = "identity", size = 1.5) +  # Increase line thickness
   labs(
     title = "Variance of Posterior Selection Probability",
     x = expression(alpha[j]),
     y = "Variance",
-    colour = "Mode"
+    colour = "Prior"
   ) +
   theme_bw() +
   theme(
@@ -319,5 +319,3 @@ plot2
 # Jeffreys prior
 plot3
 rm(list=ls()); gc() # Clean up
-
-
