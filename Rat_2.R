@@ -221,9 +221,10 @@ library(hdi)
 fit <- lasso.proj(x, y)
 CI <- confint(fit)
 CI_table <- CI[c("X1390539_at", "X1389457_at", "X1376747_at",
-     "X1374106_at", "X1393727_at", "X1393051_at"),]
+                 "X1374106_at", "X1393727_at", "X1393051_at"),]
 CI_table <- round(CI_table, 3)
 CI_table
 
-
-
+# check probes with non-zero Lasso CIs
+tmp <- round(CI, 3)
+res <- tmp[tmp[, "lower"] > 0 | tmp[, "upper"] < 0, ]
